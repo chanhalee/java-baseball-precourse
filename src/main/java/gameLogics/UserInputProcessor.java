@@ -15,7 +15,7 @@ public class UserInputProcessor {
             result = false;
         }
         while (++idx < GAME_NUMBER_LENGTH) {
-            if (!Character.isDigit(userInput.charAt(idx))) {
+			if (!Character.isDigit(userInput.charAt(idx))) {
                 result = false;
             }
         }
