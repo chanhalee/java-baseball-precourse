@@ -1,14 +1,12 @@
-package gameLogics;
+package gamelogics;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static gameLogics.BaseRule.GAME_NUMBER_LENGTH;
 
 @DisplayName("유저 입력 프로세싱 테스트")
 class UserInputProcessorTest {

@@ -1,9 +1,9 @@
-package gameLogics;
+package gamelogics;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static gameLogics.BaseRule.GAME_NUMBER_LENGTH;
+import static gamelogics.BaseRule.GAME_NUMBER_LENGTH;
 
 public class UserInputProcessor {
 
@@ -15,8 +15,9 @@ public class UserInputProcessor {
             return false;
         }
         while (++idx < GAME_NUMBER_LENGTH) {
-            if ((!Character.isDigit(userInput.charAt(idx))) || ans.contains(userInput.charAt(idx)))
+            if ((!Character.isDigit(userInput.charAt(idx))) || ans.contains(userInput.charAt(idx))) {
                 return false;
+            }
             ans.add(userInput.charAt(idx));
         }
         return true;

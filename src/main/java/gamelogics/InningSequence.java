@@ -1,4 +1,4 @@
-package gameLogics;
+package gamelogics;
 
 import dto.State;
 
@@ -21,8 +21,9 @@ public class InningSequence {
 				strikeCount += 1;
 				continue;
 			}
-			if (answer.contains(pitch.get(index)))
+			if (answer.contains(pitch.get(index))) {
 				ballCount += 1;
+			}
 		}
 		currentState.adjustState(strikeCount, ballCount);
 	}

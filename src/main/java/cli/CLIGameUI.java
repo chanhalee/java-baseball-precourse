@@ -1,12 +1,11 @@
 package cli;
 
-import gameLogics.BaseRule;
-import gameLogics.UserInputProcessor;
+import gamelogics.UserInputProcessor;
 
 import java.util.List;
 import java.util.Scanner;
 
-import static gameLogics.BaseRule.GAME_NUMBER_LENGTH;
+import static gamelogics.BaseRule.GAME_NUMBER_LENGTH;
 public class CLIGameUI {
     private final Scanner scanner;
 
@@ -51,8 +50,9 @@ public class CLIGameUI {
     public boolean askContinue(){
         System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
         String userInputString = scanner.nextLine();
-        if (userInputString.trim().equals("1"))
+        if (userInputString.trim().equals("1")) {
             return true;
+        }
         return false;
     }
 

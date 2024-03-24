@@ -1,4 +1,4 @@
-package gameLogics;
+package gamelogics;
 
 import dto.State;
 
@@ -12,11 +12,12 @@ public class InitiatingSequence {
         Random random = new Random(System.currentTimeMillis());
         int count = -1;
         while (++count < BaseRule.GAME_NUMBER_LENGTH) {
-            int randInt = ((random.nextInt()% 9) + 1);
-            if (randInt < 0)
-                randInt *= -1;
-            if (result.contains(randInt))
+            int randInt = ((random.nextInt()% 9));
+            randInt = (randInt < 0 ? randInt * -1 + 1 : randInt + 1);
+            if (result.contains(randInt)) {
+                count--;
                 continue;
+            }
             result.add(randInt);
         }
         return result;

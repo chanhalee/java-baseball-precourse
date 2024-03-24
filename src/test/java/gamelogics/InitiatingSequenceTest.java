@@ -1,8 +1,6 @@
-package gameLogics;
+package gamelogics;
 
-import controller.GameController;
 import dto.State;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,7 +9,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
-import static gameLogics.BaseRule.GAME_NUMBER_LENGTH;
+import static gamelogics.BaseRule.GAME_NUMBER_LENGTH;
 
 @DisplayName("게임 초기화 기능 테스트")
 class InitiatingSequenceTest {
@@ -38,8 +36,9 @@ class InitiatingSequenceTest {
 		int counter = 0;
 		int idx = -1;
 		while (++idx < GAME_NUMBER_LENGTH){
-			if (numbers.contains(ans.get(idx)))
+			if (numbers.contains(ans.get(idx))) {
 				counter++;
+			}
 		}
 		assertThat(counter).isEqualTo(GAME_NUMBER_LENGTH);
 	}

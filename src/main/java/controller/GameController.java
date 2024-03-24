@@ -2,8 +2,8 @@ package controller;
 
 import cli.CLIGameUI;
 import dto.State;
-import gameLogics.InitiatingSequence;
-import gameLogics.InningSequence;
+import gamelogics.InitiatingSequence;
+import gamelogics.InningSequence;
 
 import java.util.List;
 

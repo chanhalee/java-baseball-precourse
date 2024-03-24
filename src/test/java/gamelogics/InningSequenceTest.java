@@ -1,4 +1,4 @@
-package gameLogics;
+package gamelogics;
 
 import dto.State;
 import org.junit.jupiter.api.DisplayName;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static gameLogics.BaseRule.GAME_NUMBER_LENGTH;
+import static gamelogics.BaseRule.GAME_NUMBER_LENGTH;
 
 
 @DisplayName("이닝 플레이 테스트")
