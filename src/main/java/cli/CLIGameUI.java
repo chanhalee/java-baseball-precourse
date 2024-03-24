@@ -49,10 +49,12 @@ public class CLIGameUI {
         System.out.printf("%d개의 숫자를 모두 맞히셨습니다! 게임 끝\n", GAME_NUMBER_LENGTH);
     }
 
-    public void askContinue(){
+    public boolean askContinue(){
         System.out.print("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
         String userInputString = scanner.nextLine();
-
+        if (!userInputString.trim().equals("1"))
+            return false;
+        return true;
     }
 
 
