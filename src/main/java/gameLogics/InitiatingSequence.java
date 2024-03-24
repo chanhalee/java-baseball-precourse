@@ -11,8 +11,14 @@ public class InitiatingSequence {
         List<Integer> result = new ArrayList<>();
         Random random = new Random(System.currentTimeMillis());
         int count = -1;
-        while (++count < BaseRule.GAME_NUMBER_LENGTH)
-            result.add((random.nextInt() / 9) + 1);
+        while (++count < BaseRule.GAME_NUMBER_LENGTH) {
+            int randInt = ((random.nextInt()% 9) + 1);
+            if (randInt < 0)
+                randInt *= -1;
+            if (result.contains(randInt))
+                continue;
+            result.add(randInt);
+        }
         return result;
     }
     public static State getInitialState() {
