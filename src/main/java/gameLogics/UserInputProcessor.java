@@ -7,22 +7,22 @@ import static gameLogics.BaseRule.GAME_NUMBER_LENGTH;
 
 public class UserInputProcessor {
 
-    public boolean validateInputString(String userInput) {
-        boolean result = true;
+    public static boolean validateInputString(String userInput) {
         userInput = userInput.trim();
+        List<Character> ans = new ArrayList<>();
         int idx = -1;
         if (userInput.length() != GAME_NUMBER_LENGTH) {
-            result = false;
+            return false;
         }
         while (++idx < GAME_NUMBER_LENGTH) {
-			if (!Character.isDigit(userInput.charAt(idx))) {
-                result = false;
-            }
+            if ((!Character.isDigit(userInput.charAt(idx))) || ans.contains(userInput.charAt(idx)))
+                return false;
+            ans.add(userInput.charAt(idx));
         }
-        return result;
+        return true;
     }
 
-    public List<Integer> digestValidatedInputString(String userInput) {
+    public static List<Integer> digestValidatedInputString(String userInput) {
         List<Integer> result = new ArrayList<>();
         userInput = userInput.trim();
         int idx = -1;
