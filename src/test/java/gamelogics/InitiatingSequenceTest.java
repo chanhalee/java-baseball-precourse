@@ -1,22 +1,24 @@
 package gamelogics;
 
-import dto.State;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import static gamelogics.BaseRule.*;
+import static org.assertj.core.api.Assertions.*;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import static org.assertj.core.api.Assertions.assertThat;
-import static gamelogics.BaseRule.GAME_NUMBER_LENGTH;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import dto.State;
 
 @DisplayName("게임 초기화 기능 테스트")
 class InitiatingSequenceTest {
 	private Set<Integer> numbers;
 
 	@BeforeEach
-	void setUp(){
+	void setUp() {
 		numbers = new HashSet<>();
 		numbers.add(1);
 		numbers.add(2);
@@ -28,6 +30,7 @@ class InitiatingSequenceTest {
 		numbers.add(8);
 		numbers.add(9);
 	}
+
 	@Test
 	@DisplayName("정답 생성 기능 테스트")
 	void generateAnswer() {
@@ -35,7 +38,7 @@ class InitiatingSequenceTest {
 		assertThat(ans.size()).isEqualTo(GAME_NUMBER_LENGTH);
 		int counter = 0;
 		int idx = -1;
-		while (++idx < GAME_NUMBER_LENGTH){
+		while (++idx < GAME_NUMBER_LENGTH) {
 			if (numbers.contains(ans.get(idx))) {
 				counter++;
 			}

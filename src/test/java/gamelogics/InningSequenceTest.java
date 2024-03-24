@@ -1,15 +1,15 @@
 package gamelogics;
 
-import dto.State;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import static gamelogics.BaseRule.*;
+import static org.assertj.core.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static gamelogics.BaseRule.GAME_NUMBER_LENGTH;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
+import dto.State;
 
 @DisplayName("이닝 플레이 테스트")
 class InningSequenceTest {
@@ -21,7 +21,7 @@ class InningSequenceTest {
 		assertThat(InningSequence.checkEndState(state)).isEqualTo(true);
 		state = new State();
 		assertThat(InningSequence.checkEndState(state)).isEqualTo(false);
-		state = new State(GAME_NUMBER_LENGTH-1,1);
+		state = new State(GAME_NUMBER_LENGTH - 1, 1);
 		assertThat(InningSequence.checkEndState(state)).isEqualTo(false);
 		state = new State(0, GAME_NUMBER_LENGTH);
 		assertThat(InningSequence.checkEndState(state)).isEqualTo(false);

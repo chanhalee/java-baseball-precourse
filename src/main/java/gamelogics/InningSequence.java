@@ -1,8 +1,8 @@
 package gamelogics;
 
-import dto.State;
-
 import java.util.List;
+
+import dto.State;
 
 public class InningSequence {
 	public static boolean checkEndState(State state) {

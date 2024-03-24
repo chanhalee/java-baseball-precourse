@@ -13,6 +13,7 @@ public class State {
 		this.strike = strike;
 		this.ball = ball;
 	}
+
 	public void adjustState(int strike, int ball) {
 		this.strike = strike;
 		this.ball = ball;
