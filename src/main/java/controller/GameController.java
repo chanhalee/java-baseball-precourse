@@ -23,10 +23,9 @@ public class GameController {
             State currentState = initializeGame();
             while (!InningSequence.checkEndState(currentState)){
                 doInningSequence(currentState);
-                cliGameUI.printPitchResult(currentState.getStrike(), currentState.getBall());
             }
             cliGameUI.printEndMessage();
-            finish = cliGameUI.askContinue();
+            finish = !cliGameUI.askContinue();
         }
     }
 
@@ -38,5 +37,6 @@ public class GameController {
         List<Integer> pitchResult;
         pitchResult = cliGameUI.getPitch();
         InningSequence.playInning(this.answer, pitchResult, currentState);
+        cliGameUI.printPitchResult(currentState.getStrike(), currentState.getBall());
     }
 }
