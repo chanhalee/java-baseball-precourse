@@ -9,12 +9,10 @@ import java.util.Scanner;
 import static gameLogics.BaseRule.GAME_NUMBER_LENGTH;
 public class CLIGameUI {
     private final Scanner scanner;
-    private final UserInputProcessor userInputProcessor;
 
 
     public CLIGameUI() {
         this.scanner = new Scanner(System.in);
-        userInputProcessor = new UserInputProcessor();
     }
 
     public List<Integer> getPitch(){
@@ -23,11 +21,12 @@ public class CLIGameUI {
         while (flag) {
             System.out.print("숫자를 입력해 주세요 : ");
             String userInputString = scanner.nextLine();
-            if (!userInputProcessor.validateInputString(userInputString)){
+            if (!UserInputProcessor.validateInputString(userInputString)){
                 System.out.println("[ERROR] Wrong input!");
                 continue;
             }
-            result = userInputProcessor.digestValidatedInputString(userInputString);
+            result = UserInputProcessor.digestValidatedInputString(userInputString);
+            flag = false;
         }
         return result;
     }
@@ -50,11 +49,11 @@ public class CLIGameUI {
     }
 
     public boolean askContinue(){
-        System.out.print("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
         String userInputString = scanner.nextLine();
-        if (!userInputString.trim().equals("1"))
-            return false;
-        return true;
+        if (userInputString.trim().equals("1"))
+            return true;
+        return false;
     }
 
 
